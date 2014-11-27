@@ -1,0 +1,7 @@
+go to dse folder>bin>
+
+run bash cqlsh
+
+use apprity_core_schema_keyspace;
+
+DESCRIBE TABLES;

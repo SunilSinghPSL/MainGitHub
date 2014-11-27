@@ -1,0 +1,346 @@
+Github URL :: https://github.com/login
+GitHub URL :: https://github.com/login
+
+Git user name : sunil_kumar@persistent.co.in   sunilKumar1 mcacusat@123
+                 sunil.cdac.2007@gmail.com sunilcdac2007    mcacusat@123
+                                        sunilsinghpsl  testing!@#4   				 
+
+Incidennt url ::
+
+Existging endpoint for github
+URL :: https://apigee.com/resources/github
+
+
+-------------Authorization access endpoint -------------------
+
+ Redirect users to request GitHub access
+
+https://github.com/login/oauth/authorize
+
+
+Use the access token to access the API
+
+
+GET https://api.github.com/user?access_token=012e0cc6188ad490f0db939e736e04f40562b7db
+
+https://api.github.com/users/persistentsystems/repos ---- get repository url 
+
+
+https://api.github.com/applications/:client_id/tokens/:access_token
+
+https://api.github.com/applications/24df84fbaf82e89de25c/tokens/e148f7debdbcaaea9018245a8a9418bb04735990
+
+Requirment ::
+
+•	User Activity – Login, User Added to Group, Groups created
+•	Network Activity – Devices/IP Addresses which access applications to identify threats/suspicious access
+•	Resource Activity – File Upload/Download/Delete
+•	Policy – Policy created/applied, 
+           	Security Controls - Password Policy – Specify min/max password length 
+           	 Tenant Policy – Tenant can specify events to monitor
+             Start/Stop Logging for these events
+
+
+
+The library is composed of 3 main packages.
+
+org.eclipse.egit.github.core
+org.eclipse.egit.github.core.client
+org.eclipse.egit.github.core.service
+
+
+Developer gitHub URL  ::: https://developer.github.com/v3/repos/forks/#create-a-fork
+
+
+Get all repository :
+
+
+https://github.com/users/persistentsystems/repos
+
+https://github.com/orgs/persistentsystems/repos
+
+/orgs/:org/members
+
+https://github.com/settings/security
+
+Statistics
+
+1. Get contributors list with additions, deletions, and commit counts ::
+
+        https://api.github.com/repos/sunilcdac2007/Test2/stats/contributors
+
+Get :: /repos/:owner/:repo/stats/contributors
+
+2. Get the last year of commit activity data
+   GET /repos/:owner/:repo/stats/commit_activity
+    https://api.github.com/repos/sunilcdac2007/Test2/stats/commit_activity
+
+3. Get the number of additions and deletions per week
+
+   GET /repos/:owner/:repo/stats/code_frequency
+   https://api.github.com/repos/sunilcdac2007/Test2/stats/code_frequency
+  
+ 4. Get the weekly commit count for the repository owner and everyone else
+ 
+    GET /repos/:owner/:repo/stats/participation
+	https://api.github.com/repos/sunilcdac2007/Test2/stats/participation
+ 5. Get the number of commits per hour in each day
+     
+     GET /repos/:owner/:repo/stats/punch_card	
+    https://api.github.com/repos/sunilcdac2007/Test2/stats/punch_card
+
+Releases
+
+1. List releases for a repository
+      GET /repos/:owner/:repo/releases
+ https://api.github.com/repos/sunilcdac2007/Test2/releases
+ 
+2. Create a release
+
+ POST /repos/:owner/:repo/releases 
+ https://api.github.com/repos/sunilcdac2007/Test2/releases	
+
+method           URL
+
+**************Notification  *************************
+List all notifications for the current user, grouped by repository.
+GET             https://api.github.com/notifications
+
+List all notifications for the current user.
+GET             https://api.github.com/repos/sunilcdac2007/Test2/notifications
+
+Marking a notification as “read” removes it from the default view on GitHub.com.
+PUT             https://api.github.com/notifications
+
+View a single thread
+GET             https://api.github.com/notifications/threads/"thread ID"
+
+Mark a thread as read
+PATCH           https://api.github.com/notifications/threads/"thread ID"
+
+Set a Thread Subscription
+PUT             https://api.github.com/notifications/threads/:id/subscription
+
+Delete a Thread Subscription
+DELETE          https://api.github.com/notifications/threads/:id/subscription
+
+
+*************Repository->comments******************
+
+List commit comments for a repository
+GET           https://api.github.com/repos/:owner/:repo/comments
+
+List comments for a single commit
+
+GET            https://api.github.com/repos/:owner/:repo/commits/:ref/comments
+
+Create a commit comment
+
+POST         /repos/:owner/:repo/commits/:sha/comments
+
+Get a single commit comment
+
+GET       /repos/:owner/:repo/comments/:id
+
+Update a commit comment
+
+PATCH    /repos/:owner/:repo/comments/:id
+
+Delete a commit comment
+DELETE   /repos/:owner/:repo/comments/:id  
+
+
+
+-----------download url-----------------
+
+1. List downloads for a repository
+
+GET /repos/:owner/:repo/downloads
+
+https://api.github.com/repos/sunilcdac2007/Test2/downloads
+
+2. Get a single download
+
+GET /repos/:owner/:repo/downloads/:id
+
+https://api.github.com/repos/sunilcdac2007/Test2/downloads/1
+
+3. Delete a download
+
+DELETE /repos/:owner/:repo/downloads/:id
+
+https://api.github.com/repos/sunilcdac2007/Test2/downloads/1
+
+
+--------------FollowEvent Endpoint--------------------------
+
+1. List followers of a user
+
+GET /users/:username/followers
+https://api.github.com/users/sunilcdac2007/followers
+
+2. List the authenticated user’s followers:
+
+GET /user/followers
+
+https://api.github.com/users/followers
+
+3.List users followed by another user
+
+GET /users/:username/following
+
+https://api.github.com/users/sunilcdac2007/following
+
+4. Check if you are following a user
+
+GET /user/following/:username
+
+https://api.github.com/user/following/sunilcdac2007
+
+5. Check if one user follows another
+
+GET /users/:username/following/:target_user
+
+https://api.github.com/users/sunilcdac2007/following/daphne
+
+
+---------------------ForkApplyEvent Endpoint--------------------
+
+------------------------Repository->collaborator---------------
+
+List collaborators
+
+https://api.github.com/repos/sunilcdac2007/Test/collaborators
+
+GET /repos/:owner/:repo/collaborators
+
+https://api.github.com/repos/sunilcdac2007/Persistent_repository/collaborators
+
+
+Get the README
+
+/repos/:owner/:repo/readme
+
+https://api.github.com/repos/sunilcdac2007/Test/readme
+
+
+README.md
+
+https://api.github.com/users/sunilcdac2007/events/public
+
+Get contents
+
+GET /repos/:owner/:repo/contents/:path
+
+https://api.github.com/repos/sunilcdac2007/Test/contents/README.md
+
+
+https://api.github.com/repos/sunilcdac2007/Test/contents/
+
+https://api.github.com/repos/sunilcdac2007/Test2/contents/
+
+--------PersistentSystem/Persistent_repository
+
+https://api.github.com/repos/sunilcdac2007/PersistentSystem/Persistent_repository/contents/
+
+
+/repos/:owner/:repo/contents/:path
+
+
+
+
+  <proxies>
+        <proxy>
+      <id>optional</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <username>sunil_kumar@persistent.co.in</username>
+      <password>mcacusat@123</password>
+      <host>ptproxy.persistent.co.in</host>
+      <port>8080</port>
+      <nonProxyHosts>local.net|some.host.com</nonProxyHosts>
+    </proxy>
+   </proxies>
+   
+   
+   ------------------ USER level Endpoing -------------
+   
+   GET  /users/:username/events/orgs/:Org
+   
+   https://api.github.com/users/sunilcdac2007/events/orgs/PersistentSystem
+   
+   provide particular repository(Persistent_repository) level info within that organization :
+   
+   https://api.github.com/repos/PersistentSystem/Persistent_repository
+   
+   
+Gives organization profile  information (like name,location,email,count of repo,follower,following etc)
+
+   https://api.github.com/users/PersistentSystem
+    
+Gives all the information within one organization
+https://api.github.com/users/PersistentSystem/repos 
+
+Provide event info for the particular repository inside particular organization
+
+https://api.github.com/repos/PersistentSystem/MOCommon/events
+
+
+Gives repository info for particular user
+https://api.github.com/users/daphane/repos
+
+Gives information of the all received event by particular user
+https://api.github.com/users/daphane/received_events
+
+
+gives particular repo info for the particular user
+
+https://api.github.com/repos/daphane/Chi
+
+
+
+
+https://api.github.com/repos/DaphneB/ApprityTest/events
+
+https://api.github.com/repos/sunilcdac2007/newRepo/events
+
+
+daphne_barretto@persistent.co.in
+
+https://api.github.com//orgs/persistent/events
+/orgs/:org/events
+
+persistentsystems/ApprityTest
+
+https://api.github.com/orgs/persistentsystems/events
+
+https://api.github.com/repos/persistentsystems/events
+
+
+https://api.github.com/users/persistentsystems/repos
+
+
+ all event of the organization ::
+ 
+ https://api.github.com/users/DaphneB/events/orgs/persistentsystems
+ 
+ /users/:username/events/orgs/:org
+ 
+ https://api.github.com/users/DaphneB/events/orgs/persistentsystems -- get private repository by the filter name
+ 
+ https://api.github.com/repos/persistentsystems/forapprity --- url for private repo . It return all the private repository information
+ 
+ https://api.github.com/repos/persistentsystems/TestApprity -- all related url for the private repository
+ 
+ 
+ https://api.github.com/repos/persistentsystems/TestApprity/events  ---
+ 
+ 
+ https://api.github.com/repos/ZensarTechnologies12/zen/events
+ 
+ https://api.github.com/repos/persistentsystems/TestApprity/events
+repos/:orgName/:repoName/events
+ 
+https://api.github.com/orgs/persistentsystems/repos -- git all the repository including with private repository with admin user id
+
+ZensarTechnologies12/
